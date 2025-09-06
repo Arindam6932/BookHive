@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light mode styles (default) */
+:root {
+  --ring: 0 0% 0%;
+}
+
+html, body, #root { height: 100%; }
+body { @apply text-slate-800 bg-white transition-colors duration-300; }
+
+.card {
+  @apply rounded-3xl shadow-soft bg-white border border-slate-100;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2 font-medium border transition shadow-soft;
+}
+.btn-primary {
+  @apply bg-primary-600 text-white border-primary-700 hover:bg-primary-700;
+}
+.btn-ghost {
+  @apply bg-white border-slate-200 hover:border-slate-300;
+}
+
+/* Add a new style for the remove button */
+.btn-remove {
+  @apply bg-red-500 text-white border-red-600 hover:bg-red-600;
+}
+
+.input {
+  @apply w-full rounded-2xl border border-slate-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400;
+}
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full border px-2 py-1 text-xs;
+}
+
+.glass {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply text-slate-200 bg-slate-900;
+}
+
+.dark .card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .glass {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.dark .btn-ghost {
+  @apply bg-slate-700 border-slate-600 text-white hover:border-slate-500;
+}
+
+/* Dark mode style for the remove button */
+.dark .btn-remove {
+  @apply bg-red-600 text-white border-red-700 hover:bg-red-700;
+}
+
+.dark .input {
+  @apply border-slate-700 bg-slate-900 text-white focus:ring-primary-400;
+}
